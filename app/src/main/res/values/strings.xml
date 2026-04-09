@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Learn Go</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="default_web_client_id">265279113995-r3mm1871fonngj36ujquuugj4nuh573j.apps.googleusercontent.com</string>
+    <string name="enterpass">ঠিকঠাক তথ্য দিন (পাসওয়ার্ড অন্তত ৬ অক্ষর)</string>
+</resources>

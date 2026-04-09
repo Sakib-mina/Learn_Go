@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:ignore="UseCompoundDrawables">
+
+    <ImageView
+        android:id="@+id/ivCatIcon"
+        android:layout_width="@dimen/_42sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:background="@drawable/glass_bg_icon"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/ic_islamic"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvCatName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:fontFamily="sans-serif-medium"
+        android:text="ইসলাম"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        tools:ignore="HardcodedText,TextContrastCheck" />
+</LinearLayout>

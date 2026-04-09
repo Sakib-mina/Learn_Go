@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/intro_nav"
+    app:startDestination="@id/firstIntroFragment">
+
+    <fragment
+        android:id="@+id/firstIntroFragment"
+        android:name="com.novamindlabs.learngo.ui.views.intro.FirstIntroFragment"
+        android:label="fragment_first_intro"
+        tools:layout="@layout/fragment_first_intro" >
+        <action
+            android:id="@+id/action_firstIntroFragment_to_secondIntroFragment"
+            app:destination="@id/secondIntroFragment" />
+        <action
+            android:id="@+id/action_firstIntroFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondIntroFragment"
+        android:name="com.novamindlabs.learngo.ui.views.intro.SecondIntroFragment"
+        android:label="fragment_second_intro"
+        tools:layout="@layout/fragment_second_intro" >
+        <action
+            android:id="@+id/action_secondIntroFragment_to_firstIntroFragment"
+            app:destination="@id/firstIntroFragment" />
+        <action
+            android:id="@+id/action_secondIntroFragment_to_thirdIntroFragment"
+            app:destination="@id/thirdIntroFragment" />
+        <action
+            android:id="@+id/action_secondIntroFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdIntroFragment"
+        android:name="com.novamindlabs.learngo.ui.views.intro.ThirdIntroFragment"
+        android:label="fragment_third_intro"
+        tools:layout="@layout/fragment_third_intro" >
+        <action
+            android:id="@+id/action_thirdIntroFragment_to_secondIntroFragment"
+            app:destination="@id/secondIntroFragment" />
+        <action
+            android:id="@+id/action_thirdIntroFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_thirdIntroFragment_to_signUpFragment2"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.novamindlabs.learngo.ui.views.auth.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.novamindlabs.learngo.ui.views.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+</navigation>

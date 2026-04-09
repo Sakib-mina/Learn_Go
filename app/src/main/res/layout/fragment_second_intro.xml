@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050C26">
+
+    <TextView
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_42sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:text="Skip"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <View
+        android:id="@+id/viewCircleBg"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_180sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:background="@drawable/circle_border_glow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgChallenge"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:src="@drawable/intro_image_two"
+        app:layout_constraintBottom_toBottomOf="@id/viewCircleBg"
+        app:layout_constraintEnd_toEndOf="@id/viewCircleBg"
+        app:layout_constraintStart_toStartOf="@id/viewCircleBg"
+        app:layout_constraintTop_toTopOf="@id/viewCircleBg"
+        app:tint="#355BEC"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvBadge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:background="@drawable/badge_bg"
+        android:paddingHorizontal="@dimen/_18sdp"
+        android:paddingVertical="@dimen/_6sdp"
+        android:text="নিজেকে ছাড়িয়ে যান"
+        android:textColor="#8BB2FF"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewCircleBg"
+        tools:ignore="HardcodedText,VisualLintOverlap" />
+
+    <TextView
+        android:id="@+id/tvHeadline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:gravity="center"
+        android:lineHeight="@dimen/_32ssp"
+        android:text="প্রতিদিনের নতুন\nচ্যালেঞ্জ"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_26ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBadge"
+        tools:ignore="HardcodedText,UnusedAttribute,VisualLintBounds" />
+
+    <TextView
+        android:id="@+id/tvSubDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:alpha="0.7"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/_3sdp"
+        android:text="প্রতিদিন নতুন নতুন চ্যালেঞ্জ গ্রহণ করুন এবং কুইজ সমাধানের মাধ্যমে আপনার মেধা যাচাই করুন নিয়মিত।"
+        android:textColor="#D1D1D1"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeadline"
+        tools:ignore="HardcodedText,VisualLintBounds" />
+
+    <LinearLayout
+        android:id="@+id/indicatorLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_35sdp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubDesc"
+        tools:ignore="VisualLintBounds">
+
+        <View
+            android:layout_width="@dimen/_6sdp"
+            android:layout_height="@dimen/_4sdp"
+            android:alpha="0.3"
+            android:background="@drawable/indicator_inactive" />
+
+        <View
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:background="@drawable/indicator_active" />
+
+        <View
+            android:layout_width="@dimen/_6sdp"
+            android:layout_height="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:alpha="0.3"
+            android:background="@drawable/indicator_inactive" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_60sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_25sdp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/back_button_bg"
+            android:src="@drawable/ic_back"
+            android:tint="@android:color/white"
+            tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_weight="1"
+            android:background="@drawable/button_gradient_bg"
+            android:text="পরবর্তী  ›"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

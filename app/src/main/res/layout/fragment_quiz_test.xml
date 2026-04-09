@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F172A"
+    tools:context=".ui.views.dashboard.QuizTestFragment">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintEnd_toEndOf="@+id/optionsContainer"
+        app:layout_constraintStart_toStartOf="@+id/optionsContainer"
+        app:layout_constraintTop_toBottomOf="@+id/optionsContainer" />
+
+    <RelativeLayout
+        android:id="@+id/quizHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/glass_bg_rounded"
+        android:backgroundTint="#1E293B"
+        android:padding="12dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/white"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvQuizCategoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-black"
+            android:text="Islamic Quiz"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvQuestionCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="8dp"
+            android:text="1/10"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+    </RelativeLayout>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/timerProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="15dp"
+        app:indicatorColor="#38BDF8"
+        app:layout_constraintTop_toBottomOf="@id/quizHeader"
+        app:trackColor="#1E293B"
+        app:trackCornerRadius="10dp"
+        app:trackThickness="12dp" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/questionCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardBackgroundColor="#1E293B"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toBottomOf="@id/timerProgress"
+        app:strokeColor="#334155"
+        app:strokeWidth="1.5dp">
+
+        <TextView
+            android:id="@+id/tvQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:lineSpacingExtra="8dp"
+            android:padding="40dp"
+            android:text="নামাজ ইসলামের কততম স্তম্ভ?"
+            android:textAlignment="center"
+            android:textColor="#F8FAFC"
+            android:textSize="22sp"
+            tools:ignore="HardcodedText" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/optionsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/questionCard">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/option1"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginBottom="16dp"
+            android:paddingStart="25dp"
+            android:text="প্রথম"
+            android:textAlignment="viewStart"
+            android:textColor="#E2E8F0"
+            android:textSize="17sp"
+            app:backgroundTint="#1E293B"
+            app:cornerRadius="20dp"
+            app:strokeColor="#334155"
+            tools:ignore="HardcodedText,RtlSymmetry,VisualLintButtonSize" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/option2"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginBottom="16dp"
+            android:paddingStart="25dp"
+            android:text="দ্বিতীয়"
+            android:textAlignment="viewStart"
+            android:textColor="#E2E8F0"
+            android:textSize="17sp"
+            app:backgroundTint="#1E293B"
+            app:cornerRadius="20dp"
+            app:strokeColor="#334155"
+            tools:ignore="HardcodedText,RtlSymmetry,VisualLintButtonSize" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/option3"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginBottom="16dp"
+            android:paddingStart="25dp"
+            android:text="তৃতীয়"
+            android:textAlignment="viewStart"
+            android:textColor="#E2E8F0"
+            android:textSize="17sp"
+            app:backgroundTint="#1E293B"
+            app:cornerRadius="20dp"
+            app:strokeColor="#334155"
+            tools:ignore="HardcodedText,RtlSymmetry,VisualLintButtonSize" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/option4"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginBottom="16dp"
+            android:paddingStart="25dp"
+            android:text="চতুর্থ"
+            android:textAlignment="viewStart"
+            android:textColor="#E2E8F0"
+            android:textSize="17sp"
+            app:backgroundTint="#1E293B"
+            app:cornerRadius="20dp"
+            app:strokeColor="#334155"
+            tools:ignore="HardcodedText,RtlSymmetry,VisualLintButtonSize" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_margin="25dp"
+        android:backgroundTint="#10B981"
+        android:text="পরবর্তী প্রশ্ন"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:cornerRadius="24dp"
+        app:iconGravity="textEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize"
+        tools:layout_editor_absoluteX="25dp"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,72 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.LearnGo" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="CircleImage" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="RoundedImage8" parent="">
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="Rounded20">
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <style name="ProfileGlassCardStyle">
+        <item name="cardBackgroundColor">#1AFFFFFF</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">#33FFFFFF</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="ProfileItemRowStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="Base.Theme.LearnGo." parent="Base.Theme.LearnGo">
+        <item name="android:statusBarColor">#0F172A</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:navigationBarColor">#0F172A</item>
+    </style>
+
+    <style name="ProfileSectionLabelStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="CustomAlertDialogTheme" parent="Theme.Material3.Dark.Dialog.Alert">
+        <item name="colorSurface">#1A1D26</item>
+        <item name="colorOnSurface">#FFFFFF</item>
+        <item name="colorPrimary">#FF6B6B</item>
+    </style>
+
+    <style name="RoundedImageTop8" parent="">
+        <item name="cornerSizeTopLeft">@dimen/_8sdp</item>
+        <item name="cornerSizeTopRight">@dimen/_8sdp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <style name="Material3DialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Material3.MediumComponent</item>
+        <item name="colorSurface">#1E293B</item>
+        <item name="colorOnSurface">#FF5722</item>
+        <item name="colorPrimary">#10B981</item>
+    </style>
+
+    <style name="Theme.LearnGo" parent="Base.Theme.LearnGo" />
+</resources>

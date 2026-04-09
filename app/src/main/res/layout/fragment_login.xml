@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/galaxy_overlay"
+    tools:context=".ui.views.auth.LoginFragment">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_22sdp"
+        android:background="@drawable/glass_bg"
+        android:orientation="vertical"
+        android:padding="@dimen/_22sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="29dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="ফিরে আসায় স্বাগতম!"
+            android:textColor="#8BB2FF"
+            android:textSize="@dimen/_11ssp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="লগইন করুন"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_24ssp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:background="@drawable/glass_bg"
+                android:hint="ইমেইল অ্যাড্রেস"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:textColor="@android:color/white"
+                android:textColorHint="#80FFFFFF"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="Autofill,HardcodedText,TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/glass_bg"
+                android:hint="পাসওয়ার্ড"
+                android:inputType="textPassword"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:textColor="@android:color/white"
+                android:textColorHint="#80FFFFFF"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="Autofill,HardcodedText,TextContrastCheck" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/button_gradient_bg"
+            android:text="লগইন"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="অথবা"
+            android:textColor="#80FFFFFF"
+            tools:ignore="HardcodedText" />
+
+        <LinearLayout
+            android:id="@+id/googleSignUpBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@drawable/glass_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            tools:ignore="VisualLintBounds">
+
+            <ImageView
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/google"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="Google দিয়ে লগইন করুন"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_11ssp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_36sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="নতুন ইউজার?"
+            android:textColor="#A0FFFFFF"
+            android:textSize="@dimen/_12ssp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvSignUpLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="অ্যাকাউন্ট তৈরি করুন"
+            android:textColor="#4A89FF"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

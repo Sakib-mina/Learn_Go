@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/galaxy_bg" />
+    <item>
+        <shape>
+            <solid android:color="#AE050C26" /> </shape>
+    </item>
+</layer-list>

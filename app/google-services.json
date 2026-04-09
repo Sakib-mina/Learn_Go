@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "265279113995",
+    "project_id": "learn-go-dcad3",
+    "storage_bucket": "learn-go-dcad3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265279113995:android:7d8a3be46b9f412fb6b00e",
+        "android_client_info": {
+          "package_name": "com.novamindlabs.learngo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265279113995-f6delk0047695gg7v4eaho19kp9vnfhi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.novamindlabs.learngo",
+            "certificate_hash": "39a418cdc7f7212374a18764684a965598227262"
+          }
+        },
+        {
+          "client_id": "265279113995-r3mm1871fonngj36ujquuugj4nuh573j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATgoIUwCElq32y0p3Hg6aX4_QVfQlW0O4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "265279113995-r3mm1871fonngj36ujquuugj4nuh573j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

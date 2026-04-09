@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/galaxy_bg">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/glass_bg"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_12sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:background="@drawable/glass_bg_icon"
+                    android:importantForAccessibility="no"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/ic_quiz"
+                    app:tint="#FFEB3B" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All Quizzes"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="আপনার মেধা যাচাই করুন"
+                        android:textColor="#A0FFFFFF"
+                        android:textSize="@dimen/_10ssp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="উপলভ্য কুইজসমূহ"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <include
+                android:id="@+id/quizIslamic"
+                layout="@layout/item_quiz_list" />
+
+            <include
+                android:id="@+id/quizHadis"
+                layout="@layout/item_quiz_list" />
+
+            <include
+                android:id="@+id/quizProphets"
+                layout="@layout/item_quiz_list" />
+
+            <include
+                android:id="@+id/quizQuran"
+                layout="@layout/item_quiz_list" />
+
+            <include
+                android:id="@+id/quizNamaj"
+                layout="@layout/item_quiz_list" />
+
+            <include
+                android:id="@+id/quizGK"
+                layout="@layout/item_quiz_list" />
+
+            <include
+                android:id="@+id/quizScience"
+                layout="@layout/item_quiz_list" />
+
+            <include
+                android:id="@+id/quizHistory"
+                layout="@layout/item_quiz_list" />
+
+            <include
+                android:id="@+id/quizSports"
+                layout="@layout/item_quiz_list" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

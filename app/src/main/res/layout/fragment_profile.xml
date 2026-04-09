@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/galaxy_bg"
+    android:fillViewport="true"
+    tools:context=".ui.views.dashboard.ProfileFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                app:cardCornerRadius="45dp"
+                app:cardElevation="10dp"
+                app:strokeColor="#4D87B4FF"
+                app:strokeWidth="2.5dp">
+
+                <ImageView
+                    android:id="@+id/ivProfilePic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile_img"
+                    tools:ignore="ContentDescription" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Ripon"
+                    android:textColor="@color/white"
+                    android:textSize="28sp"
+                    tools:ignore="HardcodedText" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/ic_profile"
+                        app:tint="#8A99B5"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvUserEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="sakib@gmail.com"
+                        android:textColor="#8A99B5"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:background="@drawable/glass_bg_main"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <LinearLayout
+                style="@style/ProfileSectionLabelStyle"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_graduation"
+                    app:tint="#B0C4DE"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Stats"
+                    android:textColor="@color/white"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/ProfileGlassCardStyle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout style="@style/ProfileItemRowStyle">
+                        <ImageView
+                            android:id="@+id/i1"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_coin_stack"
+                            app:tint="#FFEB3B"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_toEndOf="@id/i1"
+                            android:text="Coins Balance"
+                            android:textColor="@color/white"
+                            tools:ignore="HardcodedText" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            tools:ignore="UseCompoundDrawables">
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_coin"
+                                app:tint="#FFD700"
+                                tools:ignore="ContentDescription" />
+                            <TextView
+                                android:id="@+id/tvProfileCoins"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="50"
+                                android:textColor="#FFD700"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1AFFFFFF" />
+
+                    <RelativeLayout style="@style/ProfileItemRowStyle">
+                        <ImageView
+                            android:id="@+id/i2"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_coin_stack"
+                            app:tint="#FFEB3B"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_toEndOf="@id/i2"
+                            android:text="Total Coins Spent"
+                            android:textColor="@color/white"
+                            tools:ignore="HardcodedText" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            tools:ignore="UseCompoundDrawables">
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_coin"
+                                app:tint="#FFD700"
+                                tools:ignore="ContentDescription" />
+                            <TextView
+                                android:id="@+id/tvTotalSpent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="185"
+                                android:textColor="#FFB84D"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/gradient_line_blue" />
+
+            <LinearLayout
+                style="@style/ProfileSectionLabelStyle"
+                android:layout_marginTop="25dp"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_setting"
+                    app:tint="#B0C4DE"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Settings"
+                    android:textColor="@color/white"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/ProfileGlassCardStyle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/btnHelp"
+                        style="@style/ProfileItemRowStyle">
+                        <ImageView
+                            android:id="@+id/iHelp"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_person_24"
+                            app:tint="@color/white"
+                            tools:ignore="ContentDescription" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_toEndOf="@id/iHelp"
+                            android:text="Help &amp; Support"
+                            android:textColor="@color/white"
+                            tools:ignore="HardcodedText" />
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_right_arrow"
+                            app:tint="#8A99B5"
+                            tools:ignore="ContentDescription" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1AFFFFFF" />
+
+                    <RelativeLayout
+                        android:id="@+id/btnPrivacy"
+                        style="@style/ProfileItemRowStyle">
+                        <ImageView
+                            android:id="@+id/iPrivacy"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_info_24"
+                            app:tint="@color/white"
+                            tools:ignore="ContentDescription" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_toEndOf="@id/iPrivacy"
+                            android:text="Privacy Policy"
+                            android:textColor="@color/white"
+                            tools:ignore="HardcodedText" />
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_right_arrow"
+                            app:tint="#8A99B5"
+                            tools:ignore="ContentDescription" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1AFFFFFF" />
+
+                    <RelativeLayout
+                        android:id="@+id/btnTerms"
+                        style="@style/ProfileItemRowStyle">
+                        <ImageView
+                            android:id="@+id/iTerms"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_privacy_tip_24"
+                            app:tint="@color/white"
+                            tools:ignore="ContentDescription" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_toEndOf="@id/iTerms"
+                            android:text="Terms &amp; Conditions"
+                            android:textColor="@color/white"
+                            tools:ignore="HardcodedText" />
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_right_arrow"
+                            app:tint="#8A99B5"
+                            tools:ignore="ContentDescription" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                style="@style/ProfileSectionLabelStyle"
+                android:layout_marginTop="25dp"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/glass_bg_circle"
+                    app:tint="#B0C4DE"
+                    tools:ignore="ContentDescription,ImageContrastCheck" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Account"
+                    android:textColor="@color/white"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnLogout"
+                style="@style/ProfileGlassCardStyle"
+                android:layout_marginBottom="30dp">
+
+                <RelativeLayout style="@style/ProfileItemRowStyle">
+                    <ImageView
+                        android:id="@+id/iLogout"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_logout"
+                        app:tint="#FF6B6B"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_toEndOf="@id/iLogout"
+                        android:text="Logout"
+                        android:textColor="@color/white"
+                        tools:ignore="HardcodedText" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_right_arrow"
+                        app:tint="#8A99B5"
+                        tools:ignore="ContentDescription" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

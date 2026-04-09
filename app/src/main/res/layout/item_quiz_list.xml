@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:background="@drawable/glass_bg"
+    android:gravity="center_vertical"
+    android:padding="@dimen/_12sdp">
+
+    <ImageView
+        android:id="@+id/ivQuizIcon"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/glass_bg_icon"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/ic_quiz"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvQuizTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="হাদিসের জ্ঞান"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,TextContrastCheck" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvQuestionCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="১০ টি"
+                android:textColor="#A0FFFFFF"
+                android:textSize="@dimen/_10ssp"
+                tools:ignore="HardcodedText,TextContrastCheck" />
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/dot_separator" />
+
+            <TextView
+                android:id="@+id/tvDifficulty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_difficulty_tag"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:text="সহজ"
+                android:textColor="#00E5FF"
+                android:textSize="@dimen/_9ssp"
+                tools:ignore="HardcodedText,TextContrastCheck" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:background="@drawable/glass_bg_icon"
+        android:padding="@dimen/_6sdp"
+        android:src="@drawable/ic_right_arrow"
+        app:tint="#00E5FF"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
+
+</LinearLayout>

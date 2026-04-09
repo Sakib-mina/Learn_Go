@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#1E293B"
+    app:cardCornerRadius="28dp"
+    app:cardElevation="0dp"
+    app:strokeColor="#334155"
+    app:strokeWidth="1.2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <View
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/glass_bg_circle"
+            android:backgroundTint="#1038BDF8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="-20dp"
+            android:layout_marginTop="-20dp"
+            tools:ignore="VisualLintBounds" />
+
+        <ImageView
+            android:id="@+id/ivPackIcon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="8dp"
+            android:elevation="10dp"
+            android:src="@drawable/ic_quiz"
+            app:tint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvCoinAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="500 Coins"
+            android:textColor="#F8FAFC"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivPackIcon"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvBonus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bonus: 10% Extra"
+            android:textColor="#2ECC71"
+            android:textSize="11sp"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCoinAmount"
+            tools:ignore="HardcodedText" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPrice"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="$5.01"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:backgroundTint="#0EA5E9"
+            app:cornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBonus"
+            app:rippleColor="#38BDF8"
+            tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize"
+            tools:layout_editor_absoluteX="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
