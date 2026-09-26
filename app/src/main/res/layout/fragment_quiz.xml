@@ -6,106 +6,152 @@
     android:layout_height="match_parent"
     android:background="@drawable/galaxy_bg">
 
-    <androidx.core.widget.NestedScrollView
+    <!-- Top Header Bar -->
+    <RelativeLayout
+        android:id="@+id/layoutTopHeader"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingTop="@dimen/_14sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_back"
+            app:tint="@color/white"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-bold"
+            android:text="All Quizzes"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+    </RelativeLayout>
+
+    <!-- Filter Pills Row -->
+    <HorizontalScrollView
+        android:id="@+id/scrollFilters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTopHeader">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/_15sdp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/glass_bg"
-                android:gravity="center_vertical"
-                android:padding="@dimen/_12sdp">
-
-                <ImageView
-                    android:layout_width="@dimen/_35sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:background="@drawable/glass_bg_icon"
-                    android:importantForAccessibility="no"
-                    android:padding="@dimen/_8sdp"
-                    android:src="@drawable/ic_quiz"
-                    app:tint="#FFEB3B" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="All Quizzes"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_14ssp"
-                        android:textStyle="bold"
-                        tools:ignore="HardcodedText" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="আপনার মেধা যাচাই করুন"
-                        android:textColor="#A0FFFFFF"
-                        android:textSize="@dimen/_10ssp"
-                        tools:ignore="HardcodedText" />
-                </LinearLayout>
-
-            </LinearLayout>
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/_4sdp">
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/tabAll"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:text="উপলভ্য কুইজসমূহ"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_14ssp"
+                android:background="@drawable/bg_pill_selected"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingHorizontal="@dimen/_18sdp"
+                android:paddingVertical="@dimen/_7sdp"
+                android:text="All"
+                android:textColor="#0F172A"
+                android:textSize="@dimen/_11ssp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
 
-            <include
-                android:id="@+id/quizIslamic"
-                layout="@layout/item_quiz_list" />
+            <TextView
+                android:id="@+id/tabFree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="@drawable/bg_pill_unselected"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingHorizontal="@dimen/_18sdp"
+                android:paddingVertical="@dimen/_7sdp"
+                android:text="Free"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
 
-            <include
-                android:id="@+id/quizHadis"
-                layout="@layout/item_quiz_list" />
+            <TextView
+                android:id="@+id/tabPremium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="@drawable/bg_pill_unselected"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingHorizontal="@dimen/_18sdp"
+                android:paddingVertical="@dimen/_7sdp"
+                android:text="Premium"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
 
-            <include
-                android:id="@+id/quizProphets"
-                layout="@layout/item_quiz_list" />
-
-            <include
-                android:id="@+id/quizQuran"
-                layout="@layout/item_quiz_list" />
-
-            <include
-                android:id="@+id/quizNamaj"
-                layout="@layout/item_quiz_list" />
-
-            <include
-                android:id="@+id/quizGK"
-                layout="@layout/item_quiz_list" />
-
-            <include
-                android:id="@+id/quizScience"
-                layout="@layout/item_quiz_list" />
-
-            <include
-                android:id="@+id/quizHistory"
-                layout="@layout/item_quiz_list" />
-
-            <include
-                android:id="@+id/quizSports"
-                layout="@layout/item_quiz_list" />
+            <TextView
+                android:id="@+id/tabPopular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="@drawable/bg_pill_unselected"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingHorizontal="@dimen/_18sdp"
+                android:paddingVertical="@dimen/_7sdp"
+                android:text="Popular"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </HorizontalScrollView>
+
+    <!-- Quiz RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvQuizzes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollFilters"
+        tools:listitem="@layout/item_quiz_list" />
+
+    <!-- Empty Filter State -->
+    <TextView
+        android:id="@+id/tvEmptyState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="কোনো কুইজ পাওয়া যায়নি"
+        android:textColor="#94A3B8"
+        android:textSize="@dimen/_13ssp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollFilters"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

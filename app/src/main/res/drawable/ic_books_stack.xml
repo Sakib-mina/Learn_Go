@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Base Drop Shadow -->
+    <path
+        android:fillColor="#30000000"
+        android:pathData="M 15,82 Q 50,94 85,82 Q 50,70 15,82 Z" />
+
+    <!-- BOOK 1 (Bottom - Golden Yellow/Orange) -->
+    <!-- Pages Side -->
+    <path
+        android:fillColor="#FFF8E1"
+        android:pathData="M 50,78 L 85,68 L 85,62 L 50,72 Z" />
+    <path
+        android:fillColor="#FFE082"
+        android:pathData="M 15,68 L 50,78 L 50,72 L 15,62 Z" />
+    <!-- Bottom Cover Base Rim -->
+    <path
+        android:fillColor="#E65100"
+        android:pathData="M 15,68 L 50,80 L 85,68 L 85,71 L 50,83 L 15,71 Z" />
+    <!-- Top Cover -->
+    <path
+        android:fillColor="#FFB74D"
+        android:pathData="M 15,62 L 50,72 L 85,62 L 50,52 Z" />
+
+    <!-- BOOK 2 (Middle - Teal/Emerald Green) -->
+    <!-- Pages Side -->
+    <path
+        android:fillColor="#E0F2F1"
+        android:pathData="M 52,58 L 82,49 L 82,43 L 52,52 Z" />
+    <path
+        android:fillColor="#80CBC4"
+        android:pathData="M 20,49 L 52,58 L 52,52 L 20,43 Z" />
+    <!-- Bottom Cover Base Rim -->
+    <path
+        android:fillColor="#004D40"
+        android:pathData="M 20,49 L 52,60 L 82,49 L 82,52 L 52,63 L 20,52 Z" />
+    <!-- Top Cover -->
+    <path
+        android:fillColor="#26A69A"
+        android:pathData="M 20,43 L 52,52 L 82,43 L 50,34 Z" />
+
+    <!-- BOOK 3 (Top - Bright Cyan / Light Blue) -->
+    <!-- Pages Side -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 52,38 L 80,29 L 80,23 L 52,32 Z" />
+    <path
+        android:fillColor="#B3E5FC"
+        android:pathData="M 22,29 L 52,38 L 52,32 L 22,23 Z" />
+    <!-- Bottom Cover Base Rim -->
+    <path
+        android:fillColor="#01579B"
+        android:pathData="M 22,29 L 52,40 L 80,29 L 80,32 L 52,43 L 22,32 Z" />
+    <!-- Top Cover -->
+    <path
+        android:fillColor="#29B6F6"
+        android:pathData="M 22,23 L 52,32 L 80,23 L 50,14 Z" />
+    <!-- Top Cover Highlight -->
+    <path
+        android:fillColor="#81D4FA"
+        android:pathData="M 22,23 L 34,26.5 L 62,17.5 L 50,14 Z" />
+</vector>

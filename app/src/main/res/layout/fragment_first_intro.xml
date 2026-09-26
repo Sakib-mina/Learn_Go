@@ -101,22 +101,26 @@
         tools:ignore="VisualLintBounds">
 
         <View
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_4sdp"
-            android:background="@drawable/indicator_active" />
-
-        <View
-            android:layout_width="@dimen/_6sdp"
-            android:layout_height="@dimen/_4sdp"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:alpha="0.3"
+            android:layout_width="@dimen/_8sdp"
+            android:layout_height="@dimen/_8sdp"
             android:background="@drawable/indicator_inactive" />
 
         <View
-            android:layout_width="@dimen/_6sdp"
-            android:layout_height="@dimen/_4sdp"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:alpha="0.3"
+            android:layout_width="@dimen/_8sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:background="@drawable/indicator_active" />
+
+        <View
+            android:layout_width="@dimen/_8sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:background="@drawable/indicator_inactive" />
+
+        <View
+            android:layout_width="@dimen/_8sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_6sdp"
             android:background="@drawable/indicator_inactive" />
     </LinearLayout>
 

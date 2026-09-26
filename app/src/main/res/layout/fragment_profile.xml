@@ -98,7 +98,7 @@
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:src="@drawable/ic_graduation"
-                    app:tint="#B0C4DE"
+                    app:tint="#FFEB3B"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -229,7 +229,7 @@
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:src="@drawable/ic_setting"
-                    app:tint="#B0C4DE"
+                    app:tint="#FFEB3B"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -357,8 +357,8 @@
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:src="@drawable/glass_bg_circle"
-                    app:tint="#B0C4DE"
+                    android:src="@drawable/ic_person_24"
+                    app:tint="#FFEB3B"
                     tools:ignore="ContentDescription,ImageContrastCheck" />
 
                 <TextView

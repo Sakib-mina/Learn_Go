@@ -16,10 +16,16 @@ class AuthRepository @Inject constructor(
     private val firestore: FirebaseFirestore
 ) {
     private val freeQuizCategories = listOf(
-        "Hadis_Quiz",
+        "Islamic",
         "Prophets_Quiz",
         "Namaj_Quiz",
-        "Quran_Quiz"
+        "Sports",
+        "History",
+        "BD_History",
+        "Sahaba_Life",
+        "Riddles",
+        "Computer_IT",
+        "Animal_World"
     )
 
     suspend fun registerUser(userReq: UserRegister): Resource<FirebaseUser> = try {
@@ -32,7 +38,8 @@ class AuthRepository @Inject constructor(
             "email" to userReq.email,
             "coins" to 50L,
             "dailyTaskCount" to 0L,
-            "purchasedQuizzes" to listOf<String>(),
+            "streakCount" to 0L,
+            "lastStreakUpdate" to 0L,
             "lastTaskDate" to System.currentTimeMillis(),
             "createdAt" to System.currentTimeMillis()
         )
@@ -58,6 +65,8 @@ class AuthRepository @Inject constructor(
                 "email" to user.email,
                 "coins" to 50L,
                 "dailyTaskCount" to 0L,
+                "streakCount" to 0L,
+                "lastStreakUpdate" to 0L,
                 "purchasedQuizzes" to listOf<String>(),
                 "lastTaskDate" to System.currentTimeMillis(),
                 "createdAt" to System.currentTimeMillis()
@@ -100,8 +109,8 @@ class AuthRepository @Inject constructor(
                 return@runTransaction "Already Purchased"
             }
 
-            if (currentCoins >= 20) {
-                transaction.update(userRef, "coins", currentCoins - 20)
+            if (currentCoins >= 40) {
+                transaction.update(userRef, "coins", currentCoins - 40)
                 transaction.update(userRef, "purchasedQuizzes", FieldValue.arrayUnion(category))
                 "Purchase Successful"
             } else {
@@ -151,15 +160,38 @@ class AuthRepository @Inject constructor(
     suspend fun incrementDailyTaskCount(): Resource<Unit> = try {
         val uid = auth.currentUser?.uid
         if (uid != null) {
-            firestore.collection(Nodes.USER).document(uid)
-                .update("dailyTaskCount", FieldValue.increment(1))
-                .await()
+            val userRef = firestore.collection(Nodes.USER).document(uid)
+            
+            firestore.runTransaction { transaction ->
+                val snapshot = transaction.get(userRef)
+                val currentCount = snapshot.getLong("dailyTaskCount") ?: 0L
+                val currentStreak = snapshot.getLong("streakCount") ?: 0L
+                val lastStreakUpdate = snapshot.getLong("lastStreakUpdate") ?: 0L
+                
+                val newCount = currentCount + 1
+                transaction.update(userRef, "dailyTaskCount", newCount)
+                
+                // If reaches 5 and not updated today
+                if (newCount >= 5 && !isSameDay(lastStreakUpdate)) {
+                    transaction.update(userRef, "streakCount", currentStreak + 1)
+                    transaction.update(userRef, "lastStreakUpdate", System.currentTimeMillis())
+                }
+            }.await()
+            
             Resource.Success(Unit)
         } else {
             Resource.Error("ইউজার লগইন নেই")
         }
     } catch (e: Exception) {
         Resource.Error("টাস্ক আপডেট ব্যর্থ")
+    }
+
+    private fun isSameDay(timestamp: Long): Boolean {
+        if (timestamp == 0L) return false
+        val date1 = java.util.Calendar.getInstance().apply { timeInMillis = timestamp }
+        val date2 = java.util.Calendar.getInstance()
+        return date1.get(java.util.Calendar.YEAR) == date2.get(java.util.Calendar.YEAR) &&
+                date1.get(java.util.Calendar.DAY_OF_YEAR) == date2.get(java.util.Calendar.DAY_OF_YEAR)
     }
 
 

@@ -72,6 +72,12 @@ class HomeFragment : Fragment() {
                         binding.tvHomeCoins.text = String.format("%,d", coins)
                     }
                 }
+
+                launch {
+                    viewModel.streakCount.collect { streak ->
+                        binding.tvTopStreak.text = streak.toString()
+                    }
+                }
             }
         }
     }
@@ -109,7 +115,7 @@ class HomeFragment : Fragment() {
                     binding.apply {
                         val progress = if (count > 5) 5 else count
                         dailyProgressBar.progress = progress
-                        tvProgress.text = "$progress/5 সম্পন্ন"
+                        tvProgress.text = "$progress/5"
                     }
                 }
             }
@@ -121,11 +127,15 @@ class HomeFragment : Fragment() {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.purchasedQuizzes.collect { purchasedList ->
                     binding.apply {
-                        updateLockUI(layoutCategory1, purchasedList.contains("Islamic"))
+                        updateLockUI(layoutCategory1, true) 
                         updateLockUI(layoutCategory2, purchasedList.contains("Science"))
                         updateLockUI(layoutCategory3, purchasedList.contains("History"))
                         updateLockUI(layoutCategory4, purchasedList.contains("GK"))
                         updateLockUI(layoutCategory5, purchasedList.contains("Sports"))
+                        updateLockUI(layoutCategory6, true) 
+                        updateLockUI(layoutCategory7, true) 
+                        updateLockUI(layoutCategory8, true)
+                        updateLockUI(layoutCategory9, true)
                     }
                 }
             }
@@ -133,6 +143,23 @@ class HomeFragment : Fragment() {
     }
 
     private fun updateLockUI(itemBinding: ItemCategoryBinding, isPurchased: Boolean) {}
+
+    private fun applyCategoryCardStyle(
+        itemBinding: ItemCategoryBinding,
+        startColor: String,
+        endColor: String,
+        strokeColor: String
+    ) {
+        val density = resources.displayMetrics.density
+        val gradient = android.graphics.drawable.GradientDrawable(
+            android.graphics.drawable.GradientDrawable.Orientation.TOP_BOTTOM,
+            intArrayOf(Color.parseColor(startColor), Color.parseColor(endColor))
+        ).apply {
+            cornerRadius = 16f * density
+            setStroke((1.5f * density).toInt(), Color.parseColor(strokeColor))
+        }
+        itemBinding.root.background = gradient
+    }
 
     private fun setupCategoryClicks() {
         binding.apply {
@@ -142,8 +169,9 @@ class HomeFragment : Fragment() {
                 tvCatName.text = "ইসলাম"
                 tvCatName.setTextColor(textColor)
                 ivCatIcon.setImageResource(R.drawable.ic_islamic)
-                ivCatIcon.backgroundTintList = ColorStateList.valueOf("#4010B981".toColorInt())
-                ivCatIcon.imageTintList = ColorStateList.valueOf("#10B981".toColorInt())
+                ivCatIcon.imageTintList = ColorStateList.valueOf(textColor)
+                ivCatIcon.backgroundTintList = null
+                applyCategoryCardStyle(this, "#0D3A2D", "#062119", "#10B981")
                 root.setOnClickListener { handleQuizAccess("Islamic") }
             }
 
@@ -151,8 +179,9 @@ class HomeFragment : Fragment() {
                 tvCatName.text = "বিজ্ঞান"
                 tvCatName.setTextColor(textColor)
                 ivCatIcon.setImageResource(R.drawable.ic_science)
-                ivCatIcon.backgroundTintList = ColorStateList.valueOf("#4038BDF8".toColorInt())
-                ivCatIcon.imageTintList = ColorStateList.valueOf("#38BDF8".toColorInt())
+                ivCatIcon.imageTintList = ColorStateList.valueOf(textColor)
+                ivCatIcon.backgroundTintList = null
+                applyCategoryCardStyle(this, "#0B3048", "#061C2C", "#0284C7")
                 root.setOnClickListener { handleQuizAccess("Science") }
             }
 
@@ -160,8 +189,9 @@ class HomeFragment : Fragment() {
                 tvCatName.text = "ইতিহাস"
                 tvCatName.setTextColor(textColor)
                 ivCatIcon.setImageResource(R.drawable.ic_history)
-                ivCatIcon.backgroundTintList = ColorStateList.valueOf("#40F59E0B".toColorInt())
-                ivCatIcon.imageTintList = ColorStateList.valueOf("#F59E0B".toColorInt())
+                ivCatIcon.imageTintList = ColorStateList.valueOf(textColor)
+                ivCatIcon.backgroundTintList = null
+                applyCategoryCardStyle(this, "#3B2208", "#221304", "#D97706")
                 root.setOnClickListener { handleQuizAccess("History") }
             }
 
@@ -169,8 +199,9 @@ class HomeFragment : Fragment() {
                 tvCatName.text = "সাধারণ জ্ঞান"
                 tvCatName.setTextColor(textColor)
                 ivCatIcon.setImageResource(R.drawable.ic_bulb)
-                ivCatIcon.backgroundTintList = ColorStateList.valueOf("#408B5CF6".toColorInt())
-                ivCatIcon.imageTintList = ColorStateList.valueOf("#8B5CF6".toColorInt())
+                ivCatIcon.imageTintList = ColorStateList.valueOf(textColor)
+                ivCatIcon.backgroundTintList = null
+                applyCategoryCardStyle(this, "#281D4E", "#171033", "#6366F1")
                 root.setOnClickListener { handleQuizAccess("GK") }
             }
 
@@ -178,42 +209,61 @@ class HomeFragment : Fragment() {
                 tvCatName.text = "খেলাধুলা"
                 tvCatName.setTextColor(textColor)
                 ivCatIcon.setImageResource(R.drawable.ic_sports)
-                ivCatIcon.backgroundTintList = ColorStateList.valueOf("#40F43F5E".toColorInt())
-                ivCatIcon.imageTintList = ColorStateList.valueOf("#F43F5E".toColorInt())
+                ivCatIcon.imageTintList = ColorStateList.valueOf(textColor)
+                ivCatIcon.backgroundTintList = null
+                applyCategoryCardStyle(this, "#0B3338", "#061F22", "#0D9488")
                 root.setOnClickListener { handleQuizAccess("Sports") }
+            }
+
+            layoutCategory6.apply {
+                tvCatName.text = "নামাজ শিক্ষা"
+                tvCatName.setTextColor(textColor)
+                ivCatIcon.setImageResource(R.drawable.ic_ideas)
+                ivCatIcon.imageTintList = ColorStateList.valueOf(textColor)
+                ivCatIcon.backgroundTintList = null
+                applyCategoryCardStyle(this, "#3D0E1C", "#240811", "#E11D48")
+                root.setOnClickListener { handleQuizAccess("Namaj_Quiz") }
+            }
+
+            layoutCategory7.apply {
+                tvCatName.text = "হাদিস"
+                tvCatName.setTextColor(textColor)
+                ivCatIcon.setImageResource(R.drawable.ic_book)
+                ivCatIcon.imageTintList = ColorStateList.valueOf(textColor)
+                ivCatIcon.backgroundTintList = null
+                applyCategoryCardStyle(this, "#3B1A22", "#220F14", "#F43F5E")
+                root.setOnClickListener { handleQuizAccess("Hadis_Quiz") }
+            }
+
+            layoutCategory8.apply {
+                tvCatName.text = "কুরআন"
+                tvCatName.setTextColor(textColor)
+                ivCatIcon.setImageResource(R.drawable.ic_graduation)
+                ivCatIcon.imageTintList = ColorStateList.valueOf(textColor)
+                ivCatIcon.backgroundTintList = null
+                applyCategoryCardStyle(this, "#0A3326", "#051E17", "#059669")
+                root.setOnClickListener { handleQuizAccess("Quran_Quiz") }
+            }
+
+            layoutCategory9.apply {
+                tvCatName.text = "নবীদের জীবনী"
+                tvCatName.setTextColor(textColor)
+                ivCatIcon.setImageResource(R.drawable.ic_quiz)
+                ivCatIcon.imageTintList = ColorStateList.valueOf(textColor)
+                ivCatIcon.backgroundTintList = null
+                applyCategoryCardStyle(this, "#1E293B", "#0F172A", "#38BDF8")
+                root.setOnClickListener { handleQuizAccess("Prophets_Quiz") }
             }
         }
     }
 
     private fun setupQuizCardClicks() {
-        binding.apply {
-            quizCard1.apply {
-                tvQuizTitle.text = "হাদিসের গল্প"
-                tvQuizInfo.text = "১০টি প্রশ্ন • ফ্রি"
-                ivQuizThumbnail.setImageResource(R.drawable.img_hadis_stories)
-                btnStartQuiz.setOnClickListener { navigateToQuiz("Hadis_Quiz") }
-            }
-
-            quizCard2.apply {
-                tvQuizTitle.text = "নবীদের জীবনী"
-                tvQuizInfo.text = "১০টি প্রশ্ন • ফ্রি"
-                ivQuizThumbnail.setImageResource(R.drawable.img_prophet)
-                btnStartQuiz.setOnClickListener { navigateToQuiz("Prophets_Quiz") }
-            }
-
-            quizCard3.apply {
-                tvQuizTitle.text = "নামাজ শিক্ষা"
-                tvQuizInfo.text = "১০টি প্রশ্ন • ফ্রি"
-                ivQuizThumbnail.setImageResource(R.drawable.img_namaz)
-                btnStartQuiz.setOnClickListener { navigateToQuiz("Namaj_Quiz") }
-            }
-
-            quizCard4.apply {
-                tvQuizTitle.text = "কুরআন কুইজ"
-                tvQuizInfo.text = "১০টি প্রশ্ন • ফ্রি"
-                ivQuizThumbnail.setImageResource(R.drawable.img_quran_storie)
-                btnStartQuiz.setOnClickListener { navigateToQuiz("Quran_Quiz") }
-            }
+        binding.btnPlayNow.setOnClickListener {
+            navigateToQuiz("Islamic")
+        }
+        
+        binding.tvSeeAll.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_quizFragment)
         }
     }
 
@@ -253,7 +303,7 @@ class HomeFragment : Fragment() {
 
     private fun setupNavigationActions() {
         binding.apply {
-            cardWallet.setOnClickListener { findNavController().navigate(R.id.walletFragment) }
+            layoutStats.setOnClickListener { findNavController().navigate(R.id.walletFragment) }
         }
     }
 

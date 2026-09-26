@@ -41,7 +41,6 @@ class WalletFragment : Fragment() {
     private fun setupBillingClient() {
         billingClient = BillingClient.newBuilder(requireContext())
             .setListener { billingResult, purchases ->
-                // Purchase response handle kora
                 if (billingResult.responseCode == BillingClient.BillingResponseCode.OK && purchases != null) {
                     for (purchase in purchases) {
                         handlePurchase(purchase)
@@ -51,9 +50,8 @@ class WalletFragment : Fragment() {
                 }
                 isProcessingPurchase = false
             }
-            .enablePendingPurchases()
+            .enablePendingPurchases(PendingPurchasesParams.newBuilder().enableOneTimeProducts().build())
             .build()
-
         startBillingConnection()
     }
 
@@ -87,7 +85,6 @@ class WalletFragment : Fragment() {
 
     private fun initiatePurchase(productId: String) {
         if (isProcessingPurchase) return
-
         if (!billingClient.isReady) {
             startBillingConnection()
             return
@@ -104,12 +101,14 @@ class WalletFragment : Fragment() {
 
         val params = QueryProductDetailsParams.newBuilder().setProductList(productList).build()
 
-        billingClient.queryProductDetailsAsync(params) { billingResult, productDetailsList ->
+        billingClient.queryProductDetailsAsync(params) { billingResult, productDetailsResult ->
+            val productDetailsList = productDetailsResult.productDetailsList
             if (billingResult.responseCode == BillingClient.BillingResponseCode.OK && productDetailsList.isNotEmpty()) {
+                val productDetails = productDetailsList[0]
                 val billingFlowParams = BillingFlowParams.newBuilder()
                     .setProductDetailsParamsList(listOf(
                         BillingFlowParams.ProductDetailsParams.newBuilder()
-                            .setProductDetails(productDetailsList[0])
+                            .setProductDetails(productDetails)
                             .build()
                     ))
                     .build()
@@ -147,10 +146,12 @@ class WalletFragment : Fragment() {
             QueryPurchasesParams.newBuilder()
                 .setProductType(BillingClient.ProductType.INAPP)
                 .build()
-        ) { _, purchases ->
-            for (purchase in purchases) {
-                if (purchase.purchaseState == Purchase.PurchaseState.PURCHASED) {
-                    handlePurchase(purchase)
+        ) { billingResult, purchases ->
+            if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                for (purchase in purchases) {
+                    if (purchase.purchaseState == Purchase.PurchaseState.PURCHASED) {
+                        handlePurchase(purchase)
+                    }
                 }
             }
         }

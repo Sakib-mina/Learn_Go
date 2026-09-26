@@ -19,6 +19,7 @@
             android:paddingTop="@dimen/_16sdp"
             android:paddingBottom="@dimen/_60sdp">
 
+            <!-- Top Bar -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -26,8 +27,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    tools:ignore="UseCompoundDrawables">
+                    android:gravity="center_vertical">
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:layout_width="@dimen/_35sdp"
@@ -37,273 +37,354 @@
                         app:shapeAppearanceOverlay="@style/CircleImage"
                         tools:ignore="ContentDescription" />
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="Learn Go"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_22ssp"
-                        tools:ignore="HardcodedText" />
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:text="Learn Go"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_16ssp"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Quiz Challenge"
+                            android:textColor="#10B981"
+                            android:textSize="@dimen/_10ssp"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/cardWallet"
+                    android:id="@+id/layoutStats"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:background="@drawable/glass_bg_rounded"
+                    android:background="@drawable/bg_pill"
                     android:gravity="center_vertical"
-                    android:paddingHorizontal="@dimen/_10sdp"
-                    android:paddingVertical="@dimen/_6sdp">
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_4sdp">
 
                     <ImageView
-                        android:layout_width="@dimen/_15sdp"
-                        android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/ic_coin"
-                        app:tint="#FFC107"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:src="@drawable/ic_streak"
                         tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvTopStreak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:text="7"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="@dimen/_12sdp"
+                        android:layout_marginHorizontal="@dimen/_6sdp"
+                        android:background="#40FFFFFF" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:src="@drawable/ic_coin_stack"
+                        tools:ignore="ContentDescription"
+                        app:tint="#FFC107"/>
 
                     <TextView
                         android:id="@+id/tvHomeCoins"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_4sdp"
                         android:text="50"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="@dimen/_11ssp"
                         android:textStyle="bold"
                         tools:ignore="HardcodedText" />
                 </LinearLayout>
             </RelativeLayout>
 
-            <LinearLayout
+            <!-- Greeting -->
+            <TextView
+                android:id="@+id/tvWelcomeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Hallo, Nahid Hasan"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18ssp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="Keep learning, keep growing!"
+                android:textColor="#CCFFFFFF"
+                android:textSize="@dimen/_11ssp"
+                tools:ignore="HardcodedText" />
+
+            <!-- Today's Challenge Card -->
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/glass_bg"
-                android:elevation="10dp"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/bg_challenge_gradient"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:padding="@dimen/_12sdp">
 
+                <!-- Left Column -->
                 <LinearLayout
+                    android:id="@+id/layoutLeftInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_toStartOf="@+id/layoutRightAction"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvWelcomeName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="Hello, Ripon"
+                        android:fontFamily="sans-serif-bold"
+                        android:text="Today's Challenge"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/_20ssp"
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tvProgress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text="0/5"
+                        android:textColor="#E2F13C"
+                        android:textSize="@dimen/_16ssp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <ProgressBar
+                        android:id="@+id/dailyProgressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:max="5"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/custom_progress_bar_home" />
+                </LinearLayout>
+
+                <!-- Right Action Container (Play Now Button & Target Icon) -->
+                <RelativeLayout
+                    android:id="@+id/layoutRightAction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:clipChildren="false"
+                    android:clipToPadding="false">
+
+                    <!-- Play Now Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPlayNow"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_32sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:background="@drawable/button_play_now_bg"
+                        app:backgroundTint="@null"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="Play Now"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Target / Bullseye Icon -->
+                    <ImageView
+                        android:id="@+id/ivTargetIcon"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_alignTop="@id/btnPlayNow"
+                        android:layout_alignEnd="@id/btnPlayNow"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginEnd="-4dp"
+                        android:src="@drawable/ic_target_bullseye"
+                        android:translationZ="4dp"
+                        tools:ignore="ContentDescription" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- Quote Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/bg_quote_gradient"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/_14sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:src="@drawable/ic_quotes"
+                    tools:ignore="ContentDescription" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:text="Small Steps"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold|italic"
                         tools:ignore="HardcodedText" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
-                        android:text="আজকের কুইজগুলো খেলে মেধা যাচাই করো"
-                        android:textColor="#8BB2FF"
-                        android:textSize="@dimen/_12ssp"
+                        android:fontFamily="serif"
+                        android:text="Big Knowledge"
+                        android:textColor="#38BDF8"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold|italic"
                         tools:ignore="HardcodedText" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:background="@drawable/glass_card_glow"
-                    android:clipToPadding="false"
-                    android:elevation="12dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/_10sdp"
-                    android:translationZ="8dp">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="@dimen/_90sdp"
-                        android:layout_height="@dimen/_75sdp"
-                        app:cardBackgroundColor="@android:color/transparent"
-                        app:cardCornerRadius="@dimen/_12sdp"
-                        app:cardElevation="4dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/islamic_image"
-                            tools:ignore="ContentDescription" />
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:orientation="vertical"
-                        android:paddingEnd="@dimen/_10sdp"
-                        tools:ignore="RtlSymmetry">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-black"
-                            android:text="Daily Task"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/_15ssp"
-                            tools:ignore="HardcodedText" />
-
-                        <ProgressBar
-                            android:id="@+id/dailyProgressBar"
-                            style="?android:attr/progressBarStyleHorizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_8sdp"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:max="5"
-                            android:progress="1"
-                            android:progressDrawable="@drawable/custom_progress_bar_home" />
-
-                        <TextView
-                            android:id="@+id/tvProgress"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_6sdp"
-                            android:fontFamily="sans-serif-medium"
-                            android:gravity="end"
-                            android:text="Progress 1/5"
-                            android:textColor="#CCFFFFFF"
-                            android:textSize="@dimen/_10ssp"
-                            tools:ignore="HardcodedText" />
-                    </LinearLayout>
-                </LinearLayout>
+                <ImageView
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_books_stack"
+                    tools:ignore="ContentDescription" />
             </LinearLayout>
 
+            <!-- Quiz Categories -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_25sdp">
+                android:layout_marginTop="@dimen/_20sdp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Quiz Category"
+                    android:text="Quiz Categories"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_16ssp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
 
+                <TextView
+                    android:id="@+id/tvSeeAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="See All"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="@dimen/_12ssp"
+                    tools:ignore="HardcodedText" />
             </RelativeLayout>
 
-            <LinearLayout
+            <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:orientation="horizontal"
-                android:weightSum="5"
-                tools:ignore="DisableBaselineAlignment">
+                android:columnCount="3"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                android:useDefaultMargins="true">
 
                 <include
                     android:id="@+id/layoutCategory1"
                     layout="@layout/item_category"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_columnWeight="1" />
 
                 <include
                     android:id="@+id/layoutCategory2"
                     layout="@layout/item_category"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_columnWeight="1" />
 
                 <include
                     android:id="@+id/layoutCategory3"
                     layout="@layout/item_category"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_columnWeight="1" />
 
                 <include
                     android:id="@+id/layoutCategory4"
                     layout="@layout/item_category"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_columnWeight="1" />
 
                 <include
                     android:id="@+id/layoutCategory5"
                     layout="@layout/item_category"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
+                    android:layout_columnWeight="1" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:text="More Quizzes"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_16ssp"
-                android:textStyle="bold"
-                tools:ignore="HardcodedText" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <include
+                    android:id="@+id/layoutCategory6"
+                    layout="@layout/item_category"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    tools:ignore="DisableBaselineAlignment">
+                    android:layout_columnWeight="1" />
 
-                    <include
-                        android:id="@+id/quizCard1"
-                        layout="@layout/item_quiz_card"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_10sdp"
-                        android:layout_weight="1" />
-
-                    <include
-                        android:id="@+id/quizCard2"
-                        layout="@layout/item_quiz_card"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <include
+                    android:id="@+id/layoutCategory7"
+                    layout="@layout/item_category"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_12sdp"
-                    android:orientation="horizontal"
-                    tools:ignore="DisableBaselineAlignment">
+                    android:layout_columnWeight="1" />
 
-                    <include
-                        android:id="@+id/quizCard3"
-                        layout="@layout/item_quiz_card"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_10sdp"
-                        android:layout_weight="1" />
+                <include
+                    android:id="@+id/layoutCategory8"
+                    layout="@layout/item_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1" />
 
-                    <include
-                        android:id="@+id/quizCard4"
-                        layout="@layout/item_quiz_card"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-                </LinearLayout>
+                <include
+                    android:id="@+id/layoutCategory9"
+                    layout="@layout/item_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1" />
 
-            </LinearLayout>
+            </GridLayout>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

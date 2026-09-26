@@ -4,24 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/_10sdp"
-    android:background="@drawable/glass_bg"
+    android:layout_marginBottom="@dimen/_8sdp"
+    android:background="@drawable/bg_quiz_card"
     android:gravity="center_vertical"
-    android:padding="@dimen/_12sdp">
+    android:orientation="horizontal"
+    android:padding="@dimen/_10sdp">
 
+    <!-- Category Icon Box -->
     <ImageView
         android:id="@+id/ivQuizIcon"
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
-        android:background="@drawable/glass_bg_icon"
         android:padding="@dimen/_10sdp"
         android:src="@drawable/ic_quiz"
+        app:tint="@color/white"
         tools:ignore="ContentDescription" />
 
+    <!-- Title and Subtitle -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_10sdp"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -29,54 +32,45 @@
             android:id="@+id/tvQuizTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="হাদিসের জ্ঞান"
-            android:textColor="@color/white"
+            android:text="ইসলামিক কুইজ"
+            android:textColor="#0F172A"
             android:textSize="@dimen/_13ssp"
             android:textStyle="bold"
-            tools:ignore="HardcodedText,TextContrastCheck" />
+            tools:ignore="HardcodedText" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvQuestionCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_4sdp"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:id="@+id/tvQuestionCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="১০ টি"
-                android:textColor="#A0FFFFFF"
-                android:textSize="@dimen/_10ssp"
-                tools:ignore="HardcodedText,TextContrastCheck" />
-
-            <View
-                android:layout_width="4dp"
-                android:layout_height="4dp"
-                android:layout_marginHorizontal="8dp"
-                android:background="@drawable/dot_separator" />
-
-            <TextView
-                android:id="@+id/tvDifficulty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_difficulty_tag"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="2dp"
-                android:text="সহজ"
-                android:textColor="#00E5FF"
-                android:textSize="@dimen/_9ssp"
-                tools:ignore="HardcodedText,TextContrastCheck" />
-        </LinearLayout>
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="20 Questions"
+            android:textColor="#64748B"
+            android:textSize="@dimen/_10ssp"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 
+    <!-- Right side Badge (Free/Premium) -->
+    <TextView
+        android:id="@+id/tvBadge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_badge_free"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_3sdp"
+        android:text="Free"
+        android:textColor="#15803D"
+        android:textSize="@dimen/_9ssp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <!-- Right Chevron Arrow -->
     <ImageView
-        android:layout_width="@dimen/_24sdp"
-        android:layout_height="@dimen/_24sdp"
-        android:background="@drawable/glass_bg_icon"
-        android:padding="@dimen/_6sdp"
+        android:id="@+id/ivChevron"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_marginStart="@dimen/_8sdp"
         android:src="@drawable/ic_right_arrow"
-        app:tint="#00E5FF"
-        tools:ignore="ContentDescription,ImageContrastCheck" />
+        app:tint="#64748B"
+        tools:ignore="ContentDescription" />
 
 </LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Outer Shadow / Glow Rim -->
+    <path
+        android:fillColor="#20000000"
+        android:pathData="M 45,15 A 35,35 0 1,0 45,85 A 35,35 0 1,0 45,15 Z" />
+
+    <!-- Outer Red Ring -->
+    <path
+        android:fillColor="#FF2A4B"
+        android:pathData="M 45,18 A 32,32 0 1,0 45,82 A 32,32 0 1,0 45,18 Z" />
+
+    <!-- White Ring -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 45,26 A 24,24 0 1,0 45,74 A 24,24 0 1,0 45,26 Z" />
+
+    <!-- Inner Red Ring -->
+    <path
+        android:fillColor="#FF2A4B"
+        android:pathData="M 45,34 A 16,16 0 1,0 45,66 A 16,16 0 1,0 45,34 Z" />
+
+    <!-- Center White Ring -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 45,42 A 8,8 0 1,0 45,58 A 8,8 0 1,0 45,42 Z" />
+
+    <!-- Bullseye Red Center -->
+    <path
+        android:fillColor="#FF2A4B"
+        android:pathData="M 45,46 A 4,4 0 1,0 45,54 A 4,4 0 1,0 45,46 Z" />
+
+    <!-- Dart Shaft (from top-right 78,12 pointing to bullseye center 45,50) -->
+    <path
+        android:strokeColor="#F1F5F9"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M 78,12 L 46,48" />
+
+    <!-- Green Feather Flights at Dart Top-Right (78,12) -->
+    <path
+        android:fillColor="#00E676"
+        android:pathData="M 78,12 L 88,4 L 82,18 Z" />
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M 78,12 L 86,22 L 72,16 Z" />
+    <path
+        android:fillColor="#059669"
+        android:pathData="M 78,12 L 70,2 L 68,14 Z" />
+
+    <!-- Gold Ring Accent on Shaft -->
+    <path
+        android:strokeColor="#FFD54F"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:pathData="M 74,16 L 70,20" />
+</vector>

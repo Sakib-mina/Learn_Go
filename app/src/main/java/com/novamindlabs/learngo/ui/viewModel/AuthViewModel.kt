@@ -35,6 +35,9 @@ class AuthViewModel @Inject constructor(
     private val _userCoins = MutableStateFlow(0)
     val userCoins: StateFlow<Int> = _userCoins
 
+    private val _streakCount = MutableStateFlow(0)
+    val streakCount: StateFlow<Int> = _streakCount
+
     private val _dailyTaskCount = MutableStateFlow(0)
     val dailyTaskCount: StateFlow<Int> = _dailyTaskCount
 
@@ -78,6 +81,7 @@ class AuthViewModel @Inject constructor(
                 _userEmail.value = snapshot.getString("email") ?: ""
 
                 _userCoins.value = (snapshot.get("coins") as? Long)?.toInt() ?: 0
+                _streakCount.value = (snapshot.get("streakCount") as? Long)?.toInt() ?: 0
 
                 @Suppress("UNCHECKED_CAST")
                 val purchased = snapshot.get("purchasedQuizzes") as? List<String> ?: emptyList()
@@ -114,7 +118,18 @@ class AuthViewModel @Inject constructor(
     }
 
     fun isPurchased(category: String): Boolean {
-        val freeQuizzes = listOf("Hadis_Quiz", "Prophets_Quiz", "Namaj_Quiz", "Quran_Quiz")
+        val freeQuizzes = listOf(
+            "Islamic",
+            "Prophets_Quiz",
+            "Namaj_Quiz",
+            "Sports",
+            "History",
+            "BD_History",
+            "Sahaba_Life",
+            "Riddles",
+            "Computer_IT",
+            "Animal_World"
+        )
         if (freeQuizzes.contains(category)) return true
 
         return _purchasedQuizzes.value.contains(category)
@@ -175,6 +190,7 @@ class AuthViewModel @Inject constructor(
         _currentUser.value = null
         _userName.value = "Learner"
         _userCoins.value = 0
+        _streakCount.value = 0
         _dailyTaskCount.value = 0
         _userEmail.value = ""
         _purchasedQuizzes.value = emptyList()
